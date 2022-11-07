@@ -28,4 +28,10 @@ public class Product {
     public String priceTag() {
         return getName() + " $ " + String.format("%.f2", getPrice());
     }
+
+    @Override
+    public String toString() {
+        return getName() + " $ " + getPrice();
+    }
+
 }

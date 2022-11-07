@@ -1,9 +1,7 @@
-package model;
+package model.entities;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-import model.entities.Product;
 
 public class UsedProduct extends Product {
     private final DateTimeFormatter standardFmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -20,6 +18,12 @@ public class UsedProduct extends Product {
 
     public void setManufactureDate(LocalDate manufactureDate) {
         this.manufactureDate = manufactureDate;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " (used) $ " + getPrice() + " (Manufacture date: " + getManufactureDate().format(standardFmt)
+                + ")";
     }
 
 }
